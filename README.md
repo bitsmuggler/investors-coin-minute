@@ -1,6 +1,6 @@
 # 🚀 Coin Daily Investor Report
 
-Ultra-compact, actionable daily crypto investment reports—delivered in a decision-focused format.
+Ultra-compact, actionable daily crypto investment reports-delivered in a decision-focused format.
 Perfect for newsletters, chatbots, dashboards, or personal use.
 
 ---
@@ -8,7 +8,7 @@ Perfect for newsletters, chatbots, dashboards, or personal use.
 ## ✨ Features
 
 * **Always current:** Grabs latest prices, top news, and key signals automatically
-* **No data overload:** Only real insights that matter for your decision—nothing more
+* **No data overload:** Only real insights that matter for your decision-nothing more
 
 ---
 
