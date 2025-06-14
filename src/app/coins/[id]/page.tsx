@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import { prompts } from '@/data/prompts';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
+import {useParams} from "next/navigation";
 
 async function fetchMarkdown(prompt: string) {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/generate`, {
@@ -14,7 +15,8 @@ async function fetchMarkdown(prompt: string) {
     return res.json();
 }
 
-export default function PromptDetailPage({ params }: { params: { id: string } }) {
+export default function PromptDetailPage() {
+    const params = useParams();
     const { id } = params;
     const promptObj = prompts.find(p => p.id === id);
 
@@ -40,12 +42,12 @@ export default function PromptDetailPage({ params }: { params: { id: string } })
     return (
         <div className="w-full max-w-full md:max-w-2xl mx-auto px-4 py-6 md:py-8">
             {loading ? (
-                <div className="flex items-center justify-center min-h-[200px]">
-                    {/* Spinner */}
+                <div className="flex flex-col items-center justify-center min-h-[200px]">
                     <svg className="animate-spin h-10 w-10 text-gray-400" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
                     </svg>
+                    <p>Generating report...</p>
                 </div>
             ) : (
                 markdown && <MarkdownRenderer markdown={markdown} className="prose prose-sm sm:prose md:prose-lg dark:prose-invert mx-auto" />

@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
 
 :root {
   --background: #ffffff;
@@ -23,4 +27,39 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* globals.css or your global stylesheet */
+
+h1 {
+  @apply text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4 mt-8;
+}
+
+h2 {
+  @apply text-2xl sm:text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-200 mb-3 mt-6;
+}
+
+h3 {
+  @apply text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2 mt-4;
+}
+
+h4 {
+  @apply text-lg font-semibold text-gray-600 dark:text-gray-400 mb-1 mt-4;
+}
+
+h5 {
+  @apply text-base font-medium text-gray-600 dark:text-gray-400 mb-1 mt-2;
+}
+
+h6 {
+  @apply text-sm font-medium text-gray-500 dark:text-gray-400 mb-1 mt-2;
+}
+
+ul,
+ol {
+  @apply list-none list-inside my-2 pl-0;
+}
+
+p {
+  @apply my-3 leading-relaxed text-gray-800 dark:text-gray-300;
 }
