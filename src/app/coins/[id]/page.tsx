@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { prompts } from '@/data/prompts';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
@@ -22,8 +21,8 @@ function BackToOverviewLink({
     );
 }
 
-async function fetchMarkdown(prompt: string) {
-    const res = await fetch(`/api/generate`, {
+async function fetchMarkdown(coin: string | null) {
+    const res = await fetch(`/api/generate?coin=${coin}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt }),
@@ -41,19 +40,17 @@ export default function PromptDetailPage() {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    const promptObj = prompts.find(p => p.id === id);
-
     useEffect(() => {
-        if (!promptObj) return;
+        if (!id) return;
         setLoading(true);
         setError(null);
-        fetchMarkdown(promptObj.prompt)
+        fetchMarkdown(id)
             .then(res => setMarkdown(res.markdown))
             .catch(() => setError('Failed to generate report.'))
             .finally(() => setLoading(false));
-    }, [id, promptObj]);
+    }, [id]);
 
-    if (!promptObj) {
+    if (!id) {
         return (
             <div className="px-4 py-10 text-center text-base text-gray-500 dark:text-gray-400">
                 Prompt not found.
