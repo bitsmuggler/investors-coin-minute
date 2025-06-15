@@ -26,6 +26,5 @@ export async function POST(req: NextRequest) {
     });
 
     const data = response.output_text;
-    console.log('data', data);
     return NextResponse.json({markdown: data}, {status: 200});
 }
