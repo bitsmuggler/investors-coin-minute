@@ -10,6 +10,8 @@ export const promptTemplate =  "Create a concise daily investment report for [CO
     "   - [Third relevant headline, if any]" +
     "## Opinion " +
     "   - [Brief, actionable outlook, e.g., 'Short-term volatility – buy-the-dip possible if $X holds.']" +
+    "## Expected price" +
+    "   - [Short-term price target based news and technical analysis, e.g., 'If $X holds, expect $Y in next 7 days.']" +
     "## Caution " +
     "   - [Key risk or warning, e.g., 'If [COIN/ASSET] falls below $X, more weakness likely.']" +
     "Disclaimer: This is not financial advice!" +
@@ -19,7 +21,14 @@ export const promptTemplate =  "Create a concise daily investment report for [CO
 const coins = [
     { id: "sui", title: "SUI", asset: "SUI" },
     { id: "btc", title: "Bitcoin (BTC)", asset: "BTC" },
-    // Add more coins here
+    { id: "eth", title: "Ethereum (ETH)", asset: "ETH" },
+    { id: "sol", title: "Solana (SOL)", asset: "SOL" },
+    { id: "ada", title: "Cardano (ADA)", asset: "ADA" },
+    { id: "xrp", title: "XRP (XRP)", asset: "XRP" },
+    { id: "doge", title: "Dogecoin (DOGE)", asset: "DOGE" },
+    { id: "dot", title: "Polkadot (DOT)", asset: "DOT" },
+    { id: "avax", title: "Avalanche (AVAX)", asset: "AVAX" },
+    { id: "matic", title: "Polygon (MATIC)", asset: "MATIC" }
 ];
 
 const today = new Date().toLocaleDateString('de-CH');
