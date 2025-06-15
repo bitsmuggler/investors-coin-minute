@@ -1,16 +1,13 @@
-import {NextRequest, NextResponse} from "next/server";
 import {OpenAI} from "openai";
 import {prompts} from "@/data/prompts";
 
-export async function POST(req: NextRequest) {
-    const coin = await req.nextUrl.searchParams.get('coin');
-    if (!coin) return NextResponse.json({error: "No coin provided"}, {status: 400});
+export async function advise(coin: string): Promise<{markdown: string}> {
     const promptObj = prompts.find(p => p.id === coin);
     const apiKey = process.env.OPENAI_API_KEY;
-    if (!apiKey) return NextResponse.json({error: "No API key"}, {status: 401});
+    if (!apiKey) throw new Error("No API key");
 
     if (!promptObj || !promptObj.prompt) {
-        return NextResponse.json({error: "Coin not found"}, {status: 404});
+        throw new Error("Coin not found");
     }
 
     const client = new OpenAI({apiKey});
@@ -33,5 +30,5 @@ export async function POST(req: NextRequest) {
     });
 
     const data = response.output_text;
-    return NextResponse.json({markdown: data}, {status: 200});
+    return {markdown: data}
 }

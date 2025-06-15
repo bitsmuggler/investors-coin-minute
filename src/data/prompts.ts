@@ -20,7 +20,7 @@ export const promptTemplate =  "Create a concise daily investment report for [CO
     "" +
     "Format the report so it is clear, easy to read, and suitable for both beginners and busy professionals."
 
-const coins = [
+export const coins = [
     { id: "btc", title: "Bitcoin (BTC)", asset: "BTC" },         // $2.09 T
     { id: "eth", title: "Ethereum (ETH)", asset: "ETH" },       // $304 B
     { id: "usdt", title: "Tether (USDT)", asset: "USDT" },      // $155 B
