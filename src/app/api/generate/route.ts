@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
         input: [
             {
                 role: "system",
-                content: "You are an AI report generator. ALWAYS return a finished Markdown page that can be displayed directly on a modern financial website. Do **not** use code blocks. Markdown only."
+                content: "You are a financial crypto advisor and you create short actionable coin reports. ALWAYS return a finished Markdown page that can be displayed directly on a modern financial website. Do **not** use code blocks. Markdown only."
             },
             {role: "user", content: prompt}
         ],

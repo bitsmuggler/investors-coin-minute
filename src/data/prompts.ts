@@ -11,7 +11,9 @@ export const promptTemplate =  "Create a concise daily investment report for [CO
     "## Opinion " +
     "   - [Brief, actionable outlook, e.g., 'Short-term volatility – buy-the-dip possible if $X holds.']" +
     "## Expected price" +
-    "   - [Short-term price target based news and technical analysis, e.g., 'If $X holds, expect $Y in next 7 days.']" +
+    "   - [Short-term, price target based on latest news and technical analysis]" +
+    "   - [Mid-term, price target based on latest news and technical analysis]" +
+    "   - [Long-term, price target based on macro trends]" +
     "## Caution " +
     "   - [Key risk or warning, e.g., 'If [COIN/ASSET] falls below $X, more weakness likely.']" +
     "Disclaimer: This is not financial advice!" +
