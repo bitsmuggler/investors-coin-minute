@@ -22,7 +22,7 @@ function BackToOverviewLink({
     );
 }
 
-async function fetchMarkdown(prompt) {
+async function fetchMarkdown(prompt: string) {
     const res = await fetch(`/api/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -37,9 +37,9 @@ export default function PromptDetailPage() {
     const params = useParams();
     const id = typeof params.id === 'string' ? params.id : params.id?.[0];
 
-    const [markdown, setMarkdown] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [markdown, setMarkdown] = useState<string | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
     const promptObj = prompts.find(p => p.id === id);
 
