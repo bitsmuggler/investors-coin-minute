@@ -29,7 +29,7 @@ export async function generateStaticParams() {
     }))
 }
 
-export const revalidate = 60 // invalidate every minute
+export const revalidate = 1800;
 
 export default async function CoinDetailPage({params,}: { params: Promise<{ id: string }> }) {
     const paramsData = await params;
