@@ -5,20 +5,6 @@ Perfect for newsletters, chatbots, dashboards, or personal use.
 
 > **🧪 Prototype:** This app dynamically generates and renders full HTML pages based on OpenAI-generated content. It demonstrates how AI can drive real-time, data-informed page rendering.
 
----
-
-## 🎯 Purpose
-
-The core idea is to render content-rich pages dynamically using OpenAI responses as the data source. Instead of manually crafting each report or component, we send structured prompts to the OpenAI API and render the result as a styled, readable page.
-
-This approach is ideal for:
-- Financial dashboards
-- Investor newsletters
-- Automated reporting tools
-- Personalized user portals
-
----
-
 ## ✨ Features
 
 - 🧠 Dynamic Page Generation: Each coin report page is rendered on the fly using OpenAI-generated content.
