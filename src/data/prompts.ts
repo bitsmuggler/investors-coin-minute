@@ -21,16 +21,16 @@ export const promptTemplate =  "Create a concise daily investment report for [CO
     "Format the report so it is clear, easy to read, and suitable for both beginners and busy professionals."
 
 export const coins = [
-    { id: "btc", title: "Bitcoin (BTC)", asset: "BTC" },         // $2.09 T
-    { id: "eth", title: "Ethereum (ETH)", asset: "ETH" },       // $304 B
-    { id: "xrp", title: "XRP (XRP)", asset: "XRP" },             // $127 B
-    { id: "bnb", title: "BNB (BNB)", asset: "BNB" },             // $91.5 B
-    { id: "sol", title: "Solana (SOL)", asset: "SOL" },         // $77.1 B
-    { id: "doge", title: "Dogecoin (DOGE)", asset: "DOGE" },    // $26.1 B
-    { id: "trx", title: "TRON (TRX)", asset: "TRX" },           // $25.9 B
-    { id: "ada", title: "Cardano (ADA)", asset: "ADA" },        // $22.1 B
-    { id: "sui", title: "SUI (SUI)", asset: "SUI" },            // $10.1 B
-    { id: "bch", title: "Bitcoin Cash (BCH)", asset: "BCH" },   // $8.8 B
+    { id: "btc", title: "Bitcoin (BTC)", asset: "BTC" },        // $2.09
+    { id: "eth", title: "Ethereum (ETH)", asset: "ETH" },       // $304
+    { id: "xrp", title: "XRP (XRP)", asset: "XRP" },            // $127
+    { id: "bnb", title: "BNB (BNB)", asset: "BNB" },            // $91.5
+    { id: "sol", title: "Solana (SOL)", asset: "SOL" },         // $77.1
+    { id: "doge", title: "Dogecoin (DOGE)", asset: "DOGE" },    // $26.1
+    { id: "trx", title: "TRON (TRX)", asset: "TRX" },           // $25.9
+    { id: "ada", title: "Cardano (ADA)", asset: "ADA" },        // $22.1
+    { id: "sui", title: "SUI (SUI)", asset: "SUI" },            // $10.1
+    { id: "bch", title: "Bitcoin Cash (BCH)", asset: "BCH" },   // $8.8
     // Continue adding more ranked assets if needed...
 ];
 

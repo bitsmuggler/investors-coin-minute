@@ -1,6 +1,5 @@
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 import Link from 'next/link';
-import {coins} from "@/data/prompts";
 import {advise} from "@/data/advisor";
 
 function BackToOverviewLink({
@@ -18,18 +17,6 @@ function BackToOverviewLink({
     );
 }
 
-// We'll prerender only the params from `generateStaticParams` at build time.
-// If a request comes in for a path that hasn't been generated,
-// Next.js will server-render the page on-demand.
-export const dynamicParams = true // or false, to 404 on unknown paths
-
-export async function generateStaticParams() {
-    return coins.map((coin) => ({
-        id: String(coin.id),
-    }))
-}
-
-export const revalidate = 1800;
 
 export default async function CoinDetailPage({params,}: { params: Promise<{ id: string }> }) {
     const paramsData = await params;
